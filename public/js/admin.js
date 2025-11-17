@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         tbody.innerHTML = "";
         try {
             // Faz uma requisiÃ§Ã£o GET para o backend local
-            const res = await fetch("https://marctu-1.onrender.comagendamentos");
+            const res = await fetch("https://marctu-1.onrender.com/agendamentos");
             const agendamentos = await res.json();
 
             // Percorre cada agendamento retornado e cria uma linha na tabela
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 // Confirma antes de deletar
                 if (confirm("Deseja realmente deletar este agendamento?")) {
                     try {
-                        const res = await fetch(`https://marctu-1.onrender.comagendamentos/${id}`, {
+                        const res = await fetch(`https://marctu-1.onrender.com/agendamentos/${id}`, {
                             method: "DELETE"
                         });
                         const texto = await res.text();
